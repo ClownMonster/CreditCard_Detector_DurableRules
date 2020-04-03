@@ -1,9 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <title>Credit Card Detector</title>
+        <link type="text/css"  rel="stylesheet" href="{{ url_for('static', filename = 'stylesheets/index.css') }}">
+        <script src="{{url_for('static', filename='stylesheets/index.js')}}"></script>
+
+        <!-- fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+        
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/bd81c4ab1e.js" crossorigin="anonymous"></script>
+        <!--meta tags-->
+        <meta name="viewport " content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     </head>
     <body>
-        
+        <form id="input-form" action='/inform' method="POST">
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Card Number without spaces</label>
+                  <input type="text" name='u-no' autocomplete="off" class="form-control" id="formGroupExampleInput" placeholder="Enter The Credit Card Number">
+                </div>
+        </form>
+        <div id="response-block">
+            {{ response }}
+        </div>
     </body>
 </html>
